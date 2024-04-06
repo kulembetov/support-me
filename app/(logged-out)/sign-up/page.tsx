@@ -99,9 +99,11 @@ const baseSchema = z.object({
     );
     return date <= eighteenYearsAgo;
   }, "You must be at least 18 years old"),
-  acceptTerms: z.boolean({
-    required_error: "You must accept the terms and conditions",
-  }),
+  acceptTerms: z
+    .boolean({
+      required_error: "You must accept the terms and conditions",
+    })
+    .refine((checked) => checked, "You must accept the terms and conditions"),
 });
 
 const formSchema = baseSchema.and(passwordSchema).and(accountTypeSchema);
