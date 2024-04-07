@@ -1,4 +1,4 @@
-import { LightDarkToggle } from '@/components/ui/light-dark-toggle';
+import { LightDarkToggle } from "@/components/ui/light-dark-toggle";
 
 type Props = {
   children?: React.ReactNode;

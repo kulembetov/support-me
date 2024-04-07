@@ -1,6 +1,6 @@
 import React from "react";
-import MenuTitle from "@/components/ui/menu-title";
-import MenuItem from "@/components/ui/menu-item";
+import MenuTitle from "@/app/dashboard/components/menu-title";
+import MenuItem from "@/app/dashboard/components/menu-item";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 import { LightDarkToggle } from "@/components/ui/light-dark-toggle";

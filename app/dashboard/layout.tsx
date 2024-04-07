@@ -1,4 +1,4 @@
-import MainMenu from "@/components/ui/main-menu";
+import MainMenu from "@/app/dashboard/components/main-menu";
 
 export default function DashboardLayout({
   children,
