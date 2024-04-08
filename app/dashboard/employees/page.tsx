@@ -1,7 +1,6 @@
 import { setTimeout } from "timers/promises";
 import { columns, Employee } from "@/app/dashboard/employees/columns";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Skeleton } from "@/components/ui/skeleton";
 import { DataTable } from "@/components/ui/data-table";
 
 export default async function EmployeesPage() {
@@ -137,6 +136,7 @@ export default async function EmployeesPage() {
       role: "isTester",
     },
   ];
+
   return (
     <Card>
       <CardHeader>
