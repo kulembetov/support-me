@@ -5,6 +5,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 import { LightDarkToggle } from "@/components/ui/light-dark-toggle";
 import { cn } from "@/lib/utils";
+import { SettingsIcon } from "lucide-react";
 
 const MainMenu = ({ className }: { className?: string }) => {
   return (
@@ -30,7 +31,9 @@ const MainMenu = ({ className }: { className?: string }) => {
         <Link href="/" className="hover:underline">
           Logout
         </Link>
-        <LightDarkToggle className="ml-auto" />
+        <Link href="/dashboard/settings" className="ml-auto">
+          <SettingsIcon />
+        </Link>
       </footer>
     </nav>
   );
