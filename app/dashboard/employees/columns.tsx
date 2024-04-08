@@ -10,7 +10,7 @@ export type Employee = {
   firstName: string;
   lastName: string;
   teamName: string;
-  isTeamLeader: boolean;
+  role: "isTeamLeader" | "isDeveloper" | "isTester";
   avatar?: string;
 };
 
@@ -54,11 +54,20 @@ export const columns: ColumnDef<Employee>[] = [
     header: "Team",
   },
   {
-    accessorKey: "isTeamLeader",
-    header: "",
+    accessorKey: "role",
+    header: "Role",
     cell: ({ row }) => {
-      const isTeamLeader = row.getValue("isTeamLeader");
-      return isTeamLeader ? <Badge variant="success">Team leader</Badge> : null;
+      const role: string = row.getValue("role");
+      switch (role) {
+        case "isTeamLeader":
+          return <Badge variant="lead">Team leader</Badge>;
+        case "isDeveloper":
+          return <Badge variant="developer">Developer</Badge>;
+        case "isTester":
+          return <Badge variant="tester">Tester</Badge>;
+        default:
+          return <Badge variant="default">Employee</Badge>;
+      }
     },
   },
 ];
