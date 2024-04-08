@@ -3,6 +3,8 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { useContext } from "react";
+import { DrawContext } from "@/components/ui/drawer";
 
 type Props = {
   children: React.ReactNode;
@@ -12,6 +14,7 @@ type Props = {
 export default function MenuItem({ children, href }: Props) {
   const pathname = usePathname();
   const isActive = pathname === href;
+  const { onClose } = useContext(DrawContext);
 
   return (
     <li>
@@ -22,6 +25,7 @@ export default function MenuItem({ children, href }: Props) {
             "bg-primary hover:bg-primary dark:hover:bg-primary hover:text-primary-foreground text-primary-foreground"
         )}
         href={href}
+        onClick={onClose}
       >
         {children}
       </Link>
